@@ -4,16 +4,12 @@
 SELECT
  c.customer_id AS "ID",
  c.customer_name AS "Name",
- o.order_date AS "Date",
- -- p.price AS "Price"
-sum(price) AS total
+ sum(price) AS total, STR_TO_DATE(o.order_date,' %d/%m/%Y') as DateOnly
 FROM customers c
 JOIN customers_orders co ON co.customer_id = c.customer_id
 JOIN orders o ON co.order_id = o.order_id
 JOIN pizzas_orders po ON po.order_id = o.order_id
 JOIN pizzas p ON p.pizza_id = po.pizza_id
--- WHERE c.customer_id = 1111
-GROUP BY c.customer_id, o.order_date
+group by DateOnly, c.customer_id
 ORDER BY total DESC
--- limit 1
 ;
