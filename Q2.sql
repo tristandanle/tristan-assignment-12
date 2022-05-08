@@ -35,7 +35,7 @@ PRIMARY KEY(order_id)
 );
 
 -- ================== Insert data into table orders ==================
-  insert into orders(order_date) 
+insert into orders(order_date) 
  values(date_format( '2014/10/9 9:47:00', '%e/%m/%Y %k:%i:%s %p'));
 
 insert into orders(order_date) 
@@ -43,6 +43,16 @@ values(date_format( '2014/10/9 13:20:00', '%e/%m/%Y %k:%i:%s %p'));
   
 insert into orders(order_date) 
 values(date_format( '2014/10/9 9:47:00', '%e/%m/%Y %k:%i:%s %p'));
+
+insert into orders(order_date) 
+values(date_format( '2014/10/9 19:47:00', '%e/%m/%Y %k:%i:%s %p'));
+
+insert into orders(order_date) 
+values(date_format( '2014/10/9 20:10:00', '%e/%m/%Y %k:%i:%s %p'));
+
+insert into orders(order_date) 
+values(date_format( '2014/10/10 20:10:00', '%e/%m/%Y %k:%i:%s %p'));
+
 
 
 CREATE TABLE customers_orders(
@@ -63,6 +73,14 @@ values(2,2222);
 insert into customers_orders(order_id, customer_id)
 values(3,1111);
 
+insert into customers_orders(order_id, customer_id)
+values(4,1111);
+
+insert into customers_orders(order_id, customer_id)
+values(5,2222);
+
+insert into customers_orders(order_id, customer_id)
+values(6,2222);
 
 CREATE TABLE pizzas (
 pizza_id INT NOT NULL AUTO_INCREMENT,
@@ -112,6 +130,26 @@ insert into pizzas_orders(order_id, pizza_id)
 values(3,3);
 insert into pizzas_orders(order_id, pizza_id)
 values(3,4);
+
+
+-- order #4
+insert into pizzas_orders(order_id, pizza_id)
+values(4,2);
+insert into pizzas_orders(order_id, pizza_id)
+values(4,1);
+
+-- order #5
+insert into pizzas_orders(order_id, pizza_id)
+values(5,2);
+insert into pizzas_orders(order_id, pizza_id)
+values(5,1);
+
+-- order #6
+insert into pizzas_orders(order_id, pizza_id)
+values(6,4);
+insert into pizzas_orders(order_id, pizza_id)
+values(6,2);
+
 
 
 
